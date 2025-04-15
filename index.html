@@ -92,33 +92,41 @@
         }
 
         /* Hero Section dengan Background Foto */
-        .hero {
-            padding: 180px 0 100px;
-            color: white;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
+        /* Hero Section dengan Background Foto */
+.hero {
+    padding: 180px 0 100px;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+    background-image: url('https://raw.githubusercontent.com/hamzahjaya/portfolio/master/hamzah.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('https://raw.githubusercontent.com/hamzahjaya/portfolio/master/hamzah.jpg'); /* Ganti dengan foto Anda */
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            z-index: 1;
-            filter: brightness(0.5);
-        }
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
 
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+/* Mobile Optimization */
+
+
+      
 
         .profile-container {
             width: 250px;
@@ -460,9 +468,12 @@
             }
 
             .hero {
-                padding: 150px 0 80px;
-            }
-            
+        padding: 150px 0 80px;
+        min-height: 80vh;
+        background-attachment: scroll;
+        background-size: cover;
+        background-position: top center;
+    }
             .profile-container {
                 width: 200px;
                 height: 200px;
@@ -492,10 +503,11 @@
         }
 
         @media (max-width: 480px) {
-            .hero {
-                padding: 130px 0 60px;
-            }
-            
+         
+          .hero {
+        padding: 120px 0 60px;
+        min-height: 70vh;
+    }
             .profile-container {
                 width: 259px;
                 height: 259px;
@@ -519,7 +531,50 @@
             .btn-outline {
                 margin-left: 0;
             }
+    
         }
+        .modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.9);
+  padding: 40px 20px;
+}
+
+.close {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  color: #fff;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.modal-gallery img {
+  max-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #000;
+  transition: transform 0.3s ease;
+}
+
+.modal-gallery img:hover {
+  transform: scale(1.05);
+} 
     </style>
 </head>
 <body>
@@ -637,7 +692,7 @@
                             <span class="tag">Codeigniter 3</span>
                             <span class="tag">MYsql</span>
                         </div>
-                        <a href="#" class="btn">View Project</a>
+                        <a href="#" class="btn btn-view-gallery">View Project</a>
                     </div>
                 </div>
                 <div class="project-card">
@@ -719,6 +774,17 @@
             </div>
         </div>
     </footer>
+<!-- Modal -->
+<!-- Modal -->
+<div id="imageModal" class="modal">
+  <span class="close">&times;</span>
+  <div class="modal-gallery">
+    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Project 1">
+    <img src="https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Project 2">
+    <!-- Tambahkan gambar lainnya di sini -->
+  </div>
+</div>
+
 
     <script>
         // Mobile menu toggle
@@ -750,6 +816,27 @@
                 });
             });
         });
+
     </script>
+    <script>
+      document.querySelectorAll('.btn-view-gallery').forEach(btn => {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          document.getElementById('imageModal').style.display = 'block';
+        });
+      });
+      
+      document.querySelector('.close').onclick = function() {
+        document.getElementById('imageModal').style.display = 'none';
+      };
+      
+      window.onclick = function(event) {
+        const modal = document.getElementById('imageModal');
+        if (event.target === modal) {
+          modal.style.display = 'none';
+        }
+      };
+      </script>
+      
 </body>
 </html>
