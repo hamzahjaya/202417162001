@@ -16,6 +16,247 @@
 		<link rel="shortcut icon" href="assets/icon.ico">
 
 		<link rel="stylesheet" type="text/css" href="css/style.css">
+		<style>
+			* {
+  padding: 0; /*reset*/
+  margin: 0;
+  font-family: "Quicksand", sans-serif; /*font gugel*/
+  color: #333; /*warna item*/
+}
+
+header {
+  height: 70px; /*Tinggi navbar*/
+}
+header h1 {
+  display: inline-block; /**/
+  padding: 15px 24px; /*atas bawahdan kiri kanan*/
+  text-transform: uppercase; /*fteks nya kapital*/
+}
+header h1 a {
+  transition: 0.3s; /*transisi pelan pelan*/
+}
+header h1 a:hover {
+  color: #f84744; /*warna*/
+}
+header ul {
+  float: right; /*brder ul nya full*/
+}
+header ul li {
+  padding: 24px; /**/
+  display: inline-block;
+}
+header ul li a {
+  transition: 0.3s; /*transisi pelan pelan*/
+}
+header ul li a:hover {
+  color: #f84744; /*transisi pelan pelan berubah warna*/
+}
+a {
+  text-decoration: none;
+}
+
+.navbar {
+  background: white;
+  width: 100%; /*lebar*/
+  position: fixed;
+}
+
+.nav .nav-menu {
+  justify-content: space-between;
+}
+
+.container {
+  width: 90%; /*lebar*/
+  margin: 0 auto; /*atas bawah kiri kanan auto*/
+}
+.container::after {
+  content: "";
+  display: block;
+  clear: both; /*menghapus*/
+}
+.mobile-menu {
+  float: right; /*agar kesebelah kanan*/
+  display: none; /**/
+  padding: 18px; /*kiri kanan atas bawah*/
+}
+.mobile-menu:hover {
+  cursor: pointer; /*disentuh kursor berubah jadi pointer*/
+}
+#check {
+  display: none;
+}
+.sidebar {
+  position: fixed;
+  top: 0; /*nempel ke atas*/
+  bottom: 0; /*nempel kebawah*/
+  left: -300px; /*nempel kekiri*/
+  width: 300px;
+  background-color: rgba(16, 47, 80, 0.9); /*warna begron*/
+  transition: 0.3s; /*transisi*/
+  z-index: 9999;
+}
+.sidebar ul li a {
+  color: #fff; /*transisi pelan pelan*/
+}
+.sidebar ul li {
+  padding: 24px; /*kiri kanan atas bawah*/
+  transition: 0.3s; /*transisi*/
+  transition-property: background-color; /*transisi cuma begron kolor*/
+}
+.sidebar ul li:hover {
+  background-color: #f84744; /*disentuh berubah warna merah*/
+}
+#check:checked ~ .sidebar {
+  left: 0; /*semua elemen sidebar 0,kembali kekanan semua*/
+}
+.banner {
+  background-image: url(https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80);
+  padding: 150px 0;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+section {
+  padding: 50px 0; /*kiri kanan 0*/
+}
+.banner img {
+  /*memperkecil*/
+  width: 150px;
+  border-radius: 100px;
+  box-shadow: 0 3px 5px #ddd;
+  margin-bottom: 5px;
+}
+.banner h2,
+.banner p,
+.banner span {
+  color: rgb(0, 0, 0); /*warna*/
+}
+.banner h2 {
+  margin-bottom: 10px;
+}
+.banner p {
+  font-size: 20px; /*font*/
+}
+.banner-left {
+  padding-left: 10px;
+}
+section h3 {
+  padding-bottom: 20px;
+  text-align: center;
+  margin: 20px;
+  position: relative;
+}
+section h3::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: 0;
+  width: 120px; /*lebar*/
+  height: 1px; /*tinggi*/
+  background-color: #ddd; /*warna*/
+  left: calc(50% - 60px);
+}
+section h3::after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -1px;
+  width: 40px;
+  height: 4px;
+  background-color: #f84744;
+  left: calc(50% - 20px);
+}
+#about p {
+  text-align: justify;
+  text-indent: 30px;
+  line-height: 25px;
+  margin-bottom: 15px;
+}
+#skills,
+#contact {
+  background-color: #f9f9f9;
+}
+#skills .bar {
+  height: 30px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  margin: 5px 0 20px 0;
+}
+.bar .nilai {
+  height: 30px;
+  background-color: #f84744;
+  display: inline-block;
+  color: #fff;
+  text-align: center;
+}
+.html {
+  width: 80%;
+}
+.css {
+  width: 70%;
+}
+.js {
+  width: 60%;
+}
+.Gaming {
+  width: 95%;
+}
+.Desain {
+  width: 85%;
+}
+.col-4 {
+  width: 25%;
+  box-sizing: border-box;
+  padding: 5px;
+  float: left;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.col-4 img {
+  width: 100%;
+}
+.col-4 a:hover img {
+  transform: scale(1.2);
+}
+.col-3 {
+  width: 33.33%;
+  box-sizing: border-box;
+  float: left;
+  text-align: center;
+  padding: 50px 10px;
+}
+.col-3 h4 {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ddd;
+  margin-bottom: 15px;
+}
+footer {
+  background-color: #333;
+  padding: 50px;
+  text-align: center;
+}
+footer small {
+  color: #fff;
+}
+html {
+  scroll-behavior: smooth;
+}
+
+@media (max-width: 768px) {
+  .mobile-menu {
+    display: block;
+  }
+  header ul {
+    display: none; /*jika layar 768 px si ul ilang*/
+  }
+  .col-4 {
+    width: 50%;
+  }
+  .col-3 {
+    width: 100%;
+  }
+}
+
+			</style>
 	</head>
 	<body>
 		<!-- navebar -->
