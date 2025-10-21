@@ -1,923 +1,331 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hamzah jaya putra </title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        /* Reset CSS */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        :root {
-            --primary-color: #3498db;
-            --secondary-color: #2c3e50;
-            --light-color: #ecf0f1;
-            --dark-color: #34495e;
-            --accent-color: #e74c3c;
-        }
-
-        body {
-            line-height: 1.6;
-            color: #333;
-            background-color: var(--light-color);
-        }
-
-        a {
-            text-decoration: none;
-            color: var(--primary-color);
-        }
-
-        /* Header */
-        header {
-            background-color: white;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-        }
-
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 0;
-        }
-
-        .logo {
-            font-size: 24px;
-            font-weight: 700;
-            color: var(--secondary-color);
-        }
-
-        .logo span {
-            color: var(--primary-color);
-        }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-        }
-
-        .nav-links li {
-            margin-left: 30px;
-        }
-
-        .nav-links a {
-            color: var(--secondary-color);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary-color);
-        }
-
-        .menu-toggle {
-            display: none;
-            cursor: pointer;
-            font-size: 24px;
-        }
-
-        /* Hero Section dengan Background Foto */
-        /* Hero Section dengan Background Foto */
-.hero {
-    padding: 180px 0 100px;
-    color: white;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    min-height: 100vh;
-    background-image: url('https://raw.githubusercontent.com/hamzahjaya/portfolio/master/robot.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1;
-}
-
-.hero-content {
-    position: relative;
-    z-index: 2;
-}
-
-/* Mobile Optimization */
-
-
-      
-
-        .profile-container {
-            width: 250px;
-            height: 250px;
-            margin: 0 auto 30px;
-            position: relative;
-            border-radius: 50%;
-            border: 5px solid white;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-            transition: transform 0.3s;
-        }
-
-        .profile-container:hover {
-            transform: scale(1.05);
-        }
-
-        .profile-img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
-        }
-
-        .hero p {
-            font-size: 1.2rem;
-            max-width: 700px;
-            margin: 0 auto 30px;
-            text-shadow: 0 1px 3px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Efek overlay untuk keterbacaan teks */
-        /* .hero-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(135deg, rgba(52, 152, 219, 0.7), rgba(44, 62, 80, 0.9));
-            z-index: 1;
-        } */
-
-        .btn {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: white;
-            padding: 12px 30px;
-            border-radius: 30px;
-            font-weight: 600;
-            transition: all 0.3s;
-            border: none;
-            cursor: pointer;
-            position: relative;
-            z-index: 2;
-        }
-
-        .btn:hover {
-            background-color: #c0392b;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-        }
-
-        .btn-outline {
-            background-color: transparent;
-            border: 2px solid white;
-            margin-left: 15px;
-        }
-
-        .btn-outline:hover {
-            background-color: white;
-            color: var(--primary-color);
-        }
-
-        /* About Section */
-        .section {
-            padding: 100px 0;
-            background-color: white;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            color: var(--secondary-color);
-            position: relative;
-            display: inline-block;
-            padding-bottom: 15px;
-        }
-
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background-color: var(--primary-color);
-        }
-
-        .about-content {
-            display: flex;
-            align-items: center;
-            flex-wrap: wrap;
-        }
-
-        .about-text {
-            flex: 1;
-            min-width: 300px;
-            padding-right: 30px;
-        }
-
-        .about-text h3 {
-            font-size: 1.8rem;
-            margin-bottom: 20px;
-            color: var(--secondary-color);
-        }
-
-        .about-text p {
-            margin-bottom: 15px;
-        }
-
-        .skills {
-            margin-top: 30px;
-        }
-
-        .skill-item {
-            margin-bottom: 20px;
-        }
-
-        .skill-name {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 10px;
-        }
-
-        .skill-bar {
-            height: 10px;
-            background-color: var(--light-color);
-            border-radius: 5px;
-            overflow: hidden;
-        }
-
-        .skill-progress {
-            height: 100%;
-            background-color: var(--primary-color);
-            border-radius: 5px;
-        }
-
-        .about-image {
-            flex: 1;
-            min-width: 300px;
-            text-align: center;
-        }
-
-        .about-image img {
-            max-width: 100%;
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        /* Projects Section */
-        .projects {
-            background-color: var(--light-color);
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .project-card {
-            background-color: white;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .project-image {
-            height: 200px;
-            overflow: hidden;
-        }
-
-        .project-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-
-        .project-card:hover .project-image img {
-            transform: scale(1.1);
-        }
-
-        .project-info {
-            padding: 20px;
-        }
-
-        .project-info h3 {
-            margin-bottom: 10px;
-            color: var(--secondary-color);
-        }
-
-        .project-info p {
-            margin-bottom: 15px;
-            color: #666;
-        }
-
-        .project-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
-
-        .tag {
-            background-color: var(--light-color);
-            color: var(--secondary-color);
-            padding: 5px 10px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-        }
-
-        /* Contact Section */
-        .contact-form {
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 500;
-            color: var(--secondary-color);
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 15px;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary-color);
-        }
-
-        textarea.form-control {
-            min-height: 150px;
-            resize: vertical;
-        }
-
-        /* Footer */
-        footer {
-            background-color: var(--secondary-color);
-            color: white;
-            padding: 50px 0 20px;
-            text-align: center;
-        }
-
-        .social-links {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 30px;
-        }
-
-        .social-links a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 40px;
-            height: 40px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            margin: 0 10px;
-            color: white;
-            transition: all 0.3s;
-        }
-
-        .social-links a:hover {
-            background-color: var(--primary-color);
-            transform: translateY(-5px);
-        }
-
-        .copyright {
-            padding-top: 20px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        /* Responsive Styles */
-        @media (max-width: 768px) {
-            .menu-toggle {
-                display: block;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 80px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 80px);
-                background-color: white;
-                flex-direction: column;
-                align-items: center;
-                padding: 40px 0;
-                transition: left 0.3s;
-            }
-
-            .nav-links.active {
-                left: 0;
-            }
-
-            .nav-links li {
-                margin: 15px 0;
-            }
-
-            .hero {
-        padding: 150px 0 80px;
-        min-height: 80vh;
-        background-attachment: scroll;
-        background-size: cover;
-        background-position: top center;
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hamzah Jaya Putra — High‑Innovation Portfolio</title>
+  <meta name="description" content="Portofolio high‑innovation dengan parallax, interaksi kreatif, dan layout responsif. Foto & aset menggunakan link yang tersedia." />
+  <meta name="theme-color" content="#080a0f" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root{
+      --bg:#080a0f;           /* deep night */
+      --panel:#0b1220;        /* panel bg */
+      --ink:#e5e7eb;          /* text */
+      --muted:#9aa7bf;        /* secondary text */
+      --brand:#7c3aed;        /* violet */
+      --brand2:#22d3ee;       /* cyan */
+      --accent:#f59e0b;       /* amber */
+      --good:#22c55e;
+      --radius:18px;
     }
-            .profile-container {
-                width: 200px;
-                height: 200px;
-            }
-            
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-                padding: 0 20px;
-            }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{margin:0; font-family: "Space Grotesk", system-ui, -apple-system, Segoe UI, Roboto, Inter, Arial, sans-serif; color:var(--ink); background:var(--bg)}
+    img{max-width:100%; display:block}
+    a{color:inherit; text-decoration:none}
 
-            .btn {
-                padding: 10px 20px;
-            }
+    /* Cursor dot (subtle, disabled on touch) */
+    .dot{position:fixed; width:10px; height:10px; border-radius:50%; background:radial-gradient(circle at 30% 30%, var(--brand2), var(--brand)); mix-blend-mode:screen; pointer-events:none; z-index:120; opacity:.8; transform:translate(-50%, -50%);}
+    @media (hover:none){ .dot{display:none} }
 
-            .about-content {
-                flex-direction: column;
-            }
+    /* Header */
+    header{position:sticky; top:0; z-index:70; background:rgba(8,10,15,.55); backdrop-filter:saturate(140%) blur(10px); border-bottom:1px solid rgba(255,255,255,.06)}
+    .container{width:min(1200px,92%); margin-inline:auto}
+    nav{display:flex; align-items:center; justify-content:space-between; padding:14px 0}
+    .brand{display:flex; align-items:center; gap:12px; font-weight:700}
+    .logo{width:42px; height:42px; display:grid; place-items:center; color:#061018; border-radius:12px; background:conic-gradient(from 180deg,var(--brand),var(--brand2),var(--accent),var(--brand)); box-shadow:0 10px 28px rgba(124,58,237,.33)}
+    .brand span{background:linear-gradient(90deg,var(--brand),var(--brand2)); -webkit-background-clip:text; background-clip:text; color:transparent}
+    .nav{display:flex; align-items:center; gap:10px}
+    .nav a{padding:10px 14px; border-radius:999px; color:var(--muted); font-weight:700}
+    .nav a.active, .nav a:hover{background:rgba(255,255,255,.08); color:var(--ink)}
+    .menu{display:none; font-size:22px}
 
-            .about-text {
-                padding-right: 0;
-                margin-bottom: 40px;
-            }
-        }
+    /* Progress bar */
+    .progress{position:fixed; inset:0 0 auto 0; height:3px; background:linear-gradient(90deg,var(--brand),var(--brand2),var(--accent)); transform:scaleX(0); transform-origin:left; z-index:90}
 
-        @media (max-width: 480px) {
-         
-          .hero {
-        padding: 120px 0 60px;
-        min-height: 70vh;
+    /* Hero Parallax */
+    .hero{position:relative; min-height:100svh; display:grid; place-items:center; overflow:hidden; isolation:isolate}
+    .layer{position:absolute; inset:0; background-position:center; background-size:cover; will-change:transform}
+    .bg{background-image:url('https://raw.githubusercontent.com/hamzahjaya/portfolio/master/robot.jpg'); filter:saturate(1.05) brightness(.65)}
+    .glow{background:radial-gradient(50% 40% at 80% 8%, rgba(34,211,238,.22), transparent 60%), radial-gradient(60% 50% at 15% 15%, rgba(124,58,237,.22), transparent 62%)}
+    .gridnoise{background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/><feColorMatrix type="saturate" values="0"/><feComponentTransfer><feFuncA type="table" tableValues="0 0 0 .08 0"/></feComponentTransfer></filter><rect width="100%" height="100%" filter="url(%23n)"/></svg>'); opacity:.35; mix-blend-mode:soft-light}
+
+    .hero .content{position:relative; z-index:2; text-align:center; padding:96px 0 56px}
+    .kicker{color:var(--muted); letter-spacing:.15em; text-transform:uppercase; font-weight:800; font-size:.8rem}
+    h1{font-size:clamp(2rem, 4.8vw, 4rem); line-height:1.08; margin:.35rem 0 1rem}
+    .ink{position:relative; display:inline-block}
+    .ink::after{content:""; position:absolute; left:-6px; right:-6px; bottom:0; height:.5em; background:linear-gradient(90deg,var(--accent),var(--brand2)); opacity:.18; transform:skewX(-10deg)}
+    .lead{max-width:860px; margin:0 auto 16px; color:#cbd5e1; font-size:clamp(1rem, 1.1vw + .8rem, 1.22rem)}
+
+    .stack{display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:18px}
+    .btn{--bg:linear-gradient(90deg,var(--brand),var(--brand2)); border:none; cursor:pointer; font-weight:800; letter-spacing:.3px; padding:12px 18px; border-radius:14px; background:var(--bg); color:#061018; box-shadow:0 16px 42px rgba(34,211,238,.28); transition:transform .2s, box-shadow .2s}
+    .btn:hover{transform:translateY(-2px); box-shadow:0 22px 54px rgba(34,211,238,.38)}
+    .btn.secondary{background:transparent; color:var(--ink); border:1px solid rgba(255,255,255,.2)}
+
+    /* Avatar block (tetap foto kamu) */
+    .avatar{width:168px; height:168px; margin:14px auto 0; border-radius:26px; padding:4px; background:linear-gradient(135deg,var(--brand),var(--brand2)); box-shadow:0 18px 48px rgba(0,0,0,.5)}
+    .avatar img{border-radius:22px; width:100%; height:100%; object-fit:cover}
+
+    /* Marquee (skills) */
+    .marquee{overflow:hidden; white-space:nowrap; border-top:1px solid rgba(255,255,255,.08); border-bottom:1px solid rgba(255,255,255,.08); background:#0a0e18}
+    .marquee .inner{display:inline-block; padding:12px 0; animation:roll 20s linear infinite}
+    .pill{display:inline-flex; align-items:center; gap:8px; padding:8px 14px; margin-right:12px; border:1px solid rgba(255,255,255,.12); border-radius:999px; color:var(--muted)}
+    @keyframes roll{ from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+    /* Sections */
+    section{padding:84px 0}
+    .title{display:flex; align-items:center; gap:12px; margin-bottom:14px}
+    .dot{width:12px; height:12px; border-radius:50%; background:linear-gradient(90deg,var(--brand),var(--brand2))}
+    h2{margin:0; font-size:clamp(1.4rem, 1.2vw + 1rem, 2rem)}
+    .sub{color:var(--muted); margin:6px 0 26px}
+
+    /* About split */
+    .split{display:grid; grid-template-columns:1.15fr .85fr; gap:34px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,.02), rgba(255,255,255,0)); border:1px solid rgba(255,255,255,.08); border-radius:var(--radius); padding:22px}
+    .skills{display:grid; gap:14px; margin-top:12px}
+    .skill .meta{display:flex; justify-content:space-between; color:var(--muted)}
+    .bar{height:12px; background:#08101a; border-radius:999px; overflow:hidden; outline:1px solid rgba(255,255,255,.08)}
+    .bar>i{display:block; height:100%; width:var(--val); background:linear-gradient(90deg,var(--brand),var(--brand2))}
+
+    /* Projects — horizontal snap (inovasi tinggi) */
+    .hscroll{display:grid; grid-auto-flow:column; grid-auto-columns: clamp(280px, 38vw, 480px); gap:18px; overflow-x:auto; padding-bottom:8px; scroll-snap-type:x mandatory}
+    .hscroll::-webkit-scrollbar{height:8px}
+    .hscroll::-webkit-scrollbar-thumb{background:linear-gradient(90deg,var(--brand),var(--brand2)); border-radius:999px}
+    .project{scroll-snap-align:start; display:flex; flex-direction:column; border:1px solid rgba(255,255,255,.08); border-radius:20px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,0)); transition:transform .25s ease, box-shadow .25s ease}
+    .project:hover{transform:translateY(-6px) rotate(-.25deg); box-shadow:0 30px 70px rgba(0,0,0,.55)}
+    .project .thumb{aspect-ratio:16/10; overflow:hidden}
+    .project .thumb img{width:100%; height:100%; object-fit:cover; transform:scale(1.02); transition:transform .6s}
+    .project:hover .thumb img{transform:scale(1.07)}
+    .project .body{padding:16px}
+    .tags{display:flex; flex-wrap:wrap; gap:8px; margin:10px 0 14px}
+    .tag{padding:6px 10px; border-radius:999px; background:#0b1220; color:var(--muted); border:1px solid rgba(255,255,255,.12); font-weight:600; font-size:.85rem}
+
+    /* Certificates grid */
+    .grid{display:grid; gap:18px}
+    .auto{grid-template-columns:repeat(auto-fill,minmax(260px,1fr))}
+    .cert .thumb{aspect-ratio:16/11; overflow:hidden; border-bottom:1px solid rgba(255,255,255,.06)}
+
+    /* Contact */
+    .links{display:flex; flex-wrap:wrap; gap:12px}
+    .chip{display:inline-flex; align-items:center; gap:10px; padding:10px 14px; border-radius:999px; border:1px solid rgba(255,255,255,.16)}
+
+    /* Footer */
+    footer{padding:36px 0 46px; color:var(--muted); border-top:1px solid rgba(255,255,255,.08)}
+    .social{display:flex; gap:12px}
+    .social a{width:44px; height:44px; display:grid; place-items:center; border-radius:50%; border:1px solid rgba(255,255,255,.14)}
+    .social a:hover{border-color:transparent; background:linear-gradient(90deg,var(--brand),var(--brand2)); color:#061018}
+
+    /* FAB */
+    .fab{position:fixed; right:16px; bottom:18px; z-index:75; border:none; border-radius:999px; padding:12px 16px; background:linear-gradient(90deg,var(--brand),var(--brand2)); color:#061018; font-weight:800; box-shadow:0 14px 34px rgba(34,211,238,.32)}
+
+    /* Mobile */
+    @media (max-width:980px){
+      .menu{display:block}
+      .nav{position:fixed; inset:64px 12px auto; display:none; flex-direction:column; background:rgba(8,10,15,.95); border:1px solid rgba(255,255,255,.08); padding:12px; border-radius:14px}
+      .nav.open{display:flex}
+      .split{grid-template-columns:1fr}
     }
-            .profile-container {
-                width: 259px;
-                height: 259px;
-                border-width: 4px;
-            }
-            
-            .hero h1 {
-                font-size: 1.8rem;
-            }
-
-            .section-title h2 {
-                font-size: 2rem;
-            }
-
-            .btn {
-                display: block;
-                width: 100%;
-                margin-bottom: 10px;
-            }
-
-            .btn-outline {
-                margin-left: 0;
-            }
-    
-        }
-        .modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  overflow: auto;
-  background-color: rgba(0,0,0,0.9);
-  padding: 40px 20px;
-}
-
-.close-presensi {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  color: #fff;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-}
-.close {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  color: #fff;
-  font-size: 40px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-
-.modal-gallery {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  justify-content: center;
-}
-
-.modal-gallery img {
-  max-width: 300px;
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-  box-shadow: 0 0 10px #000;
-  transition: transform 0.3s ease;
-}
-
-.modal-gallery img:hover {
-  transform: scale(1.05);
-} 
-    </style>
+    @media (prefers-reduced-motion: reduce){
+      .project,.btn{transition:none}
+      .layer{transform:none !important}
+      .marquee .inner{animation:none}
+      html{scroll-behavior:auto}
+    }
+  </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="container">
-            <nav>
-                <div class="logo">Hamzah jaya putra <span></span></div>
-                <div class="menu-toggle">
-                    <i class="fas fa-bars"></i>
-                </div>
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">Tentang Saya</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#sertifikat">Sertifikat</a></li>
-                    <li><a href="#contact">Hubungi</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+  <div class="dot" id="dot"></div>
+  <div class="progress" id="progress"></div>
 
-    <!-- Hero Section dengan Background Foto -->
-    <section class="hero" id="home">
-        <div class="hero-overlay"></div>
-        <div class="container">
-            <div class="hero-content">
-                <!-- Foto Profil -->
-                <div class="profile-container">
-                    <img src="https://raw.githubusercontent.com/hamzahjaya/portfolio/master/hamzahjayaputra.jpg" alt="Profile Photo" class="profile-img">
-                </div>
-                
-                <h1>Hamzah Jaya Putra</h1>
-                <!-- <p>Mahasiswa RPL</p> -->
-                <a href="#projects" class="btn">lihat Pekerjaan saya</a>
-                <a href="#contact" class="btn btn-outline">Hubungi</a>
-            </div>
+  <header>
+    <div class="container">
+      <nav>
+        <a class="brand" href="#home" aria-label="Home">
+          <span class="logo"><i class="fa-solid fa-bolt"></i></span>
+          <span>Hamzah <strong>Jaya Putra</strong></span>
+        </a>
+        <div class="nav" id="nav">
+          <a href="#home" class="active">Beranda</a>
+          <a href="#about">Tentang</a>
+          <a href="#projects">Projek</a>
+          <a href="#certs">Sertifikat</a>
+          <a href="#contact">Kontak</a>
         </div>
-    </section>
+        <button class="menu" id="menu" aria-label="Toggle menu"><i class="fa-solid fa-bars"></i></button>
+      </nav>
+    </div>
+  </header>
 
-    <!-- About Section -->
-    <section class="section" id="about">
-        <div class="container">
-            <div class="section-title">
-                <h2>Tentang Saya</h2>
-            </div>
-            <div class="about-content">
-                <div class="about-text">
-                    <h3>Saya Mahasiswa RPL & Web Developer</h3>
-<p>
-  Saya adalah mahasiswa Program RPL (Rekognisi Pembelajaran Lampau) di Universitas Bhayangkara Raya, yang berkesempatan melanjutkan pendidikan dengan pengakuan atas pengalaman profesional saya sebelumnya. 
-  Dengan lebih dari 5 tahun pengalaman dalam pengembangan web, saya mengkhususkan diri dalam membangun situs dan aplikasi web yang responsif, fungsional, dan user-friendly.
-  Keahlian saya mencakup teknologi front-end dan back-end, serta pendekatan pemecahan masalah yang kreatif untuk menciptakan solusi digital yang efektif dan berdampak.
-</p>
+  <!-- HERO (Parallax + Avatar) -->
+  <section id="home" class="hero" aria-label="Hero">
+    <div class="layer bg" data-depth="0.15"></div>
+    <div class="layer glow" data-depth="0.25"></div>
+    <div class="layer gridnoise" data-depth="0.45"></div>
 
-                    <div class="skills">
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>HTML/CSS</span>
-                                <span>95%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 95%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>JavaScript</span>
-                                <span>90%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 90%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>PHP</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 85%"></div>
-                            </div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-name">
-                                <span>Mysql</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 80%"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="about-image">
-                  
-                  <img src="https://raw.githubusercontent.com/hamzahjaya/portfolio/master/hamzah.jpg" alt="Web Developer">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section class="section projects" id="projects">
-        <div class="container">
-            <div class="section-title">
-                <h2>Pekerjaan Saya</h2>
-            </div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://raw.githubusercontent.com/hamzahjaya/portfolio/master/galeri/app1.png" alt="Project 1">
-                    </div>
-                    <div class="project-info">
-                        <h3>PRESENSI </h3>
-                        <p>Aplikasi Mencatat Kehadiran Pegawai KPU RI</p>
-                        <div class="project-tags">
-                            <span class="tag">HTML/CSS</span>
-                            <span class="tag">Codeigniter 3</span>
-                            <span class="tag">MYsql</span>
-                        </div>
-                        <a href="#" class="btn btn-view-gallery-presensi">View Project</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://raw.githubusercontent.com/hamzahjaya/portfolio/master/galeri/ap1.png" alt="Project 2">
-                    </div>
-                    <div class="project-info">
-                        <h3>INFOPEMILU</h3>
-                        <p>Web Publikasi seputar pemilu dan pilkada</p>
-                        <div class="project-tags">
-                          <span class="tag">HTML/CSS</span>
-                          <span class="tag">Codeigniter 3</span>
-                          <span class="tag">MYsql</span>
-                        </div>
-                        <a href="#" class="btn btn-view-gallery-infopemilu">View Project</a>
-                    </div>
-                </div>
-                <!-- <div class="project-card">
-                    <div class="project-image">
-                        <img src="https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Project 3">
-                    </div>
-                    <div class="project-info">
-                        <h3>Portfolio Website</h3>
-                        <p>A custom portfolio website for a photographer with image gallery and contact form.</p>
-                        <div class="project-tags">
-                            <span class="tag">HTML/CSS</span>
-                            <span class="tag">JavaScript</span>
-                            <span class="tag">PHP</span>
-                        </div>
-                        <a href="#" class="btn">View Project</a>
-                    </div>
-                </div> -->
-            </div>
-        </div>
-    </section>
-    <section class="section" id="sertifikat">
-      <div class="container">
-          <div class="section-title">
-              <h2>Sertifikat</h2>
-          </div>
-          <div class="projects-grid">
-              <!-- Sertifikat 1 -->
-              <div class="project-card">
-                  <div class="project-image">
-                      <img src="https://raw.githubusercontent.com/hamzahjaya/portfolio/master/sertifikat/Hamzah%20jaya%20Putra%20_page-0005.jpg" alt="Sertifikat 1">
-                  </div>
-                  <div class="project-info">
-                      <h3>Sertifikasi Profesi</h3>
-                      <p>Junior Web Development</p>
-                  </div>
-              </div>
-              <!-- Sertifikat 2 -->
-              <div class="project-card">
-                  <div class="project-image">
-                      <img src="https://raw.githubusercontent.com/hamzahjaya/portfolio/master/sertifikat/Hamzah%20jaya%20Putra%20_page-0019.jpg" alt="Sertifikat 2">
-                  </div>
-                  <div class="project-info">
-                      <h3>Sertifikasi Google</h3>
-                      <p>Google Cybersecurity</p>
-                  </div>
-              </div>
-              <div class="project-card">
-                <div class="project-image">
-                    <img src="https://raw.githubusercontent.com/hamzahjaya/portfolio/master/sertifikat/Hamzah%20jaya%20Putra%20_page-0017.jpg" alt="Sertifikat 2">
-                </div>
-                <div class="project-info">
-                    <h3>Sertifikasi Komdigi</h3>
-                    <p>Digital Talent Scholarship (Softskill Development)</p>
-                </div>
-            </div>
-              <!-- Tambahkan lebih banyak sertifikat di sini -->
-          </div>
+    <div class="content container">
+      <div class="kicker">Web Developer • RPL</div>
+      <h1><span class="ink">Bangun Aplikasi</span> yang <span style="background:linear-gradient(90deg,var(--brand),var(--brand2));-webkit-background-clip:text;background-clip:text;color:transparent">cepat</span>, <span style="background:linear-gradient(90deg,var(--brand2),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent">berani</span>, & <span style="background:linear-gradient(90deg,var(--accent),var(--brand));-webkit-background-clip:text;background-clip:text;color:transparent">berdampak</span>.</h1>
+      <p class="lead">5+ tahun membangun solusi web untuk instansi & publik (CodeIgniter, PHP, MySQL, JavaScript). Fokus UX yang jelas, navigasi ringkas, dan performa tinggi.</p>
+      <div class="avatar"><img src="https://raw.githubusercontent.com/hamzahjaya/portfolio/master/hamzahjayaputra.jpg" alt="Foto Hamzah Jaya Putra" loading="eager"></div>
+      <div class="stack">
+        <a class="btn" href="#projects"><i class="fa-solid fa-eye"></i>&nbsp;Lihat Projek</a>
+        <a class="btn secondary" href="#contact"><i class="fa-solid fa-paper-plane"></i>&nbsp;Hubungi</a>
       </div>
-    </section>
-    
-    <!-- Contact Section -->
-    <section class="section" id="contact">
-        <div class="container">
-            <div class="section-title">
-                <h2>Get In Touch</h2>
-            </div>
-            <div class="contact-form">
-              Email : Hamzahjayaputra@gmail.com
-                <!-- <form>
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" class="form-control" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" class="form-control" required></textarea>
-                    </div>
-                    <button type="submit" class="btn">Send Message</button>
-                </form> -->
-            </div>
-        </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Footer -->
-    <footer>
-        <div class="container">
-            <div class="social-links">
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-instagram"></i></a>
-            </div>
-            <div class="copyright">
-                <p>&copy; 2025 Hamzah Jaya Putra. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
-<!-- Modal -->
-<!-- Modal -->
-<div id="presensi" class="modal">
-  <span class="close-presensi">&times;</span>
-  <div class="modal-gallery">
-    <img src="https://raw.githubusercontent.com/hamzahjaya/portfolio/master/galeri/app1.png" alt="Project 1">
-    <img src="https://raw.githubusercontent.com/hamzahjaya/portfolio/master/galeri/app2.png" alt="Project 1">
-    <img src="https://raw.githubusercontent.com/hamzahjaya/portfolio/master/galeri/app3.png" alt="Project 1">
-    <img src="https://raw.githubusercontent.com/hamzahjaya/portfolio/master/galeri/app4.png" alt="Project 1">
-    <!-- Tambahkan gambar lainnya di sini -->
+  <!-- Marquee Skills -->
+  <div class="marquee" aria-hidden="true">
+    <div class="inner">
+      <span class="pill"><i class="fa-solid fa-code"></i> HTML/CSS</span>
+      <span class="pill"><i class="fa-solid fa-bolt"></i> JavaScript</span>
+      <span class="pill"><i class="fa-solid fa-database"></i> MySQL</span>
+      <span class="pill"><i class="fa-solid fa-diagram-project"></i> PHP / CodeIgniter</span>
+      <span class="pill"><i class="fa-solid fa-shield-halved"></i> Security‑first</span>
+      <span class="pill"><i class="fa-solid fa-gauge-high"></i> Performance</span>
+      <!-- duplicate for seamless loop -->
+      <span class="pill"><i class="fa-solid fa-code"></i> HTML/CSS</span>
+      <span class="pill"><i class="fa-solid fa-bolt"></i> JavaScript</span>
+      <span class="pill"><i class="fa-solid fa-database"></i> MySQL</span>
+      <span class="pill"><i class="fa-solid fa-diagram-project"></i> PHP / CodeIgniter</span>
+      <span class="pill"><i class="fa-solid fa-shield-halved"></i> Security‑first</span>
+      <span class="pill"><i class="fa-solid fa-gauge-high"></i> Performance</span>
+    </div>
   </div>
-</div>
-<div id="infopemilu" class="modal">
-  <span class="close">&times;</span>
-  <div class="modal-gallery">
-    <img src="https://raw.githubusercontent.com/hamzahjaya/portfolio/master/galeri/ap1.png" alt="Project 1"><br>
-    <!-- <img src="https://raw.githubusercontent.com/hamzahjaya/portfolio/master/galeri/ap2.png" alt="Project 1"> -->
- 
-    <!-- Tambahkan gambar lainnya di sini -->
-  </div>
-</div>
 
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="container">
+      <div class="title"><span class="dot"></span><h2>Tentang Saya</h2></div>
+      <p class="sub">Mahasiswa Program RPL (Universitas Bhayangkara Raya) & Web Developer yang mengutamakan UX, arsitektur data rapi, dan implementasi pragmatis.</p>
+      <div class="split">
+        <article class="card">
+          <p>Saya menyenangi <strong>arsitektur data</strong> bersih, <strong>API</strong> konsisten, dan antarmuka <strong>responsif</strong>. Tujuan saya: menyederhanakan proses kompleks menjadi alur yang jelas dan cepat bagi pengguna.</p>
+          <div class="skills">
+            <div class="skill"><div class="meta"><span>HTML/CSS</span><span>95%</span></div><div class="bar"><i style="--val:95%"></i></div></div>
+            <div class="skill"><div class="meta"><span>JavaScript</span><span>90%</span></div><div class="bar"><i style="--val:90%"></i></div></div>
+            <div class="skill"><div class="meta"><span>PHP</span><span>85%</span></div><div class="bar"><i style="--val:85%"></i></div></div>
+            <div class="skill"><div class="meta"><span>MySQL</span><span>80%</span></div><div class="bar"><i style="--val:80%"></i></div></div>
+          </div>
+        </article>
+        <aside class="card" style="padding:0; overflow:hidden; display:grid; place-items:center">
+          <img src="https://raw.githubusercontent.com/hamzahjaya/portfolio/master/hamzah.jpg" alt="Hamzah bekerja di depan laptop" style="width:100%; height:100%; object-fit:cover">
+        </aside>
+      </div>
+    </div>
+  </section>
 
-    <script>
-        // Mobile menu toggle
-        const menuToggle = document.querySelector('.menu-toggle');
-        const navLinks = document.querySelector('.nav-links');
+  <!-- PROJECTS (Horizontal snap) -->
+  <section id="projects">
+    <div class="container">
+      <div class="title"><span class="dot"></span><h2>Projek Inovatif</h2></div>
+      <p class="sub">Scroll mendatar untuk jelajah. Hover untuk efek tilt.</p>
+      <div class="hscroll" id="hscroll">
+        <article class="project">
+          <div class="thumb"><img src="https://raw.githubusercontent.com/hamzahjaya/portfolio/master/galeri/app1.png" alt="Aplikasi Presensi"></div>
+          <div class="body">
+            <h3 style="margin:0 0 6px">PRESENSI</h3>
+            <p style="margin:0 0 10px; color:var(--muted)">Pencatatan kehadiran pegawai KPU RI.</p>
+            <div class="tags"><span class="tag">HTML/CSS</span><span class="tag">CodeIgniter 3</span><span class="tag">MySQL</span></div>
+          </div>
+        </article>
+        <article class="project">
+          <div class="thumb"><img src="https://raw.githubusercontent.com/hamzahjaya/portfolio/master/galeri/ap1.png" alt="Portal Infopemilu"></div>
+          <div class="body">
+            <h3 style="margin:0 0 6px">INFOPEMILU</h3>
+            <p style="margin:0 0 10px; color:var(--muted)">Portal publikasi informasi Pemilu & Pilkada.</p>
+            <div class="tags"><span class="tag">HTML/CSS</span><span class="tag">CodeIgniter 3</span><span class="tag">MySQL</span></div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-        menuToggle.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-        });
+  <!-- CERTS -->
+  <section id="certs">
+    <div class="container">
+      <div class="title"><span class="dot"></span><h2>Sertifikat</h2></div>
+      <div class="grid auto">
+        <article class="project cert">
+          <div class="thumb"><img src="https://raw.githubusercontent.com/hamzahjaya/portfolio/master/sertifikat/Hamzah%20jaya%20Putra%20_page-0005.jpg" alt="Sertifikasi Profesi Junior Web Development"></div>
+          <div class="body"><strong>Sertifikasi Profesi</strong><br><span style="color:var(--muted)">Junior Web Development</span></div>
+        </article>
+        <article class="project cert">
+          <div class="thumb"><img src="https://raw.githubusercontent.com/hamzahjaya/portfolio/master/sertifikat/Hamzah%20jaya%20Putra%20_page-0019.jpg" alt="Google Cybersecurity"></div>
+          <div class="body"><strong>Google</strong><br><span style="color:var(--muted)">Cybersecurity</span></div>
+        </article>
+        <article class="project cert">
+          <div class="thumb"><img src="https://raw.githubusercontent.com/hamzahjaya/portfolio/master/sertifikat/Hamzah%20jaya%20Putra%20_page-0017.jpg" alt="Komdigi DTS Softskill"></div>
+          <div class="body"><strong>Komdigi</strong><br><span style="color:var(--muted)">Digital Talent Scholarship (Softskill)</span></div>
+        </article>
+      </div>
+    </div>
+  </section>
 
-        // Close mobile menu when clicking on a link
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-            });
-        });
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="container">
+      <div class="title"><span class="dot"></span><h2>Kontak</h2></div>
+      <p class="sub">Terbuka untuk kolaborasi & peluang baru. Balas cepat via email.</p>
+      <div class="card">
+        <div class="links">
+          <a class="chip" href="mailto:Hamzahjayaputra@gmail.com"><i class="fa-solid fa-envelope"></i> <strong>Email</strong>: Hamzahjayaputra@gmail.com</a>
+          <a class="chip" href="#"><i class="fa-brands fa-github"></i> GitHub</a>
+          <a class="chip" href="#"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+          <a class="chip" href="#"><i class="fa-brands fa-x-twitter"></i> X</a>
+          <a class="chip" href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-        // Smooth scrolling for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
-                e.preventDefault();
-                
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                
-                window.scrollTo({
-                    top: targetElement.offsetTop - 80,
-                    behavior: 'smooth'
-                });
-            });
-        });
+  <footer>
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap">
+      <small>© 2025 Hamzah Jaya Putra. All rights reserved.</small>
+      <div class="social">
+        <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+        <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#" aria-label="X / Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+      </div>
+    </div>
+  </footer>
 
-    </script>
-    <script>
-      document.querySelectorAll('.btn-view-gallery-presensi').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-          e.preventDefault();
-          document.getElementById('presensi').style.display = 'block';
-        });
-      });
-      
-      document.querySelector('.close-presensi').onclick = function() {
-        document.getElementById('presensi').style.display = 'none';
-      };
-      
-      window.onclick = function(event) {
-        const modal = document.getElementById('presensi');
-        if (event.target === modal) {
-          modal.style.display = 'none';
-        }
-      };
-      document.querySelectorAll('.btn-view-gallery-infopemilu').forEach(btn => {
-        btn.addEventListener('click', function(e) {
-          e.preventDefault();
-          document.getElementById('infopemilu').style.display = 'block';
-        });
-      });
-      
-      document.querySelector('.close').onclick = function() {
-        document.getElementById('infopemilu').style.display = 'none';
-      };
-      
-      window.onclick = function(event) {
-        const modal = document.getElementById('infopemilu');
-        if (event.target === modal) {
-          modal.style.display = 'none';
-        }
-      };
-      </script>
-      
+  <button class="fab" onclick="document.querySelector('#contact').scrollIntoView({behavior:'smooth'})"><i class="fa-solid fa-message"></i> &nbsp;Kontak</button>
+
+  <script>
+    // Mobile menu
+    const menuBtn = document.getElementById('menu');
+    const nav = document.getElementById('nav');
+    menuBtn?.addEventListener('click', () => nav.classList.toggle('open'));
+
+    // Scroll progress + spy
+    const links=[...document.querySelectorAll('.nav a')];
+    const secs=links.map(a=>document.querySelector(a.getAttribute('href'))).filter(Boolean);
+    const bar=document.getElementById('progress');
+    const spy=()=>{const max=document.documentElement.scrollHeight - innerHeight; const p=Math.max(0, Math.min(1, scrollY / (max||1))); bar.style.transform=`scaleX(${p})`; let idx=secs.findIndex(s=>s.getBoundingClientRect().top>120)-1; if(idx<0) idx=secs.length-1; links.forEach(l=>l.classList.remove('active')); links[idx]?.classList.add('active');};
+    addEventListener('scroll', ()=>requestAnimationFrame(spy)); spy();
+
+    // Smooth anchor offset
+    document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const el=document.querySelector(a.getAttribute('href')); if(el){e.preventDefault(); const y=el.getBoundingClientRect().top+scrollY-64; scrollTo({top:y,behavior:'smooth'}); nav.classList.remove('open');}}));
+
+    // Parallax (scroll + subtle pointer)
+    const layers=document.querySelectorAll('.layer');
+    const parallax=()=>{const sy=scrollY||0; layers.forEach(l=>{const d=parseFloat(l.dataset.depth||'0.2'); const ty=sy*d*0.25; l.style.transform=`translate3d(0, ${ty}px, 0)`;});};
+    addEventListener('scroll', ()=>requestAnimationFrame(parallax)); parallax();
+
+    // Pointer parallax + cursor dot
+    const dot=document.getElementById('dot');
+    let lx=innerWidth/2, ly=innerHeight/2; let tx=lx, ty=ly; const follow=()=>{tx += (lx-tx)*0.15; ty += (ly-ty)*0.15; dot.style.left=tx+"px"; dot.style.top=ty+"px"; requestAnimationFrame(follow)}; follow();
+    addEventListener('pointermove', (e)=>{lx=e.clientX; ly=e.clientY; layers.forEach(l=>{const d=parseFloat(l.dataset.depth||'0.2'); const mx=(e.clientX/innerWidth-0.5)*d*16; const my=(e.clientY/innerHeight-0.5)*d*12; l.style.transform += ` translate(${mx}px, ${my}px)`;});}, {passive:true});
+
+    // Horizontal scroll hint: wheel translates to x (for desktop mice)
+    const hs=document.getElementById('hscroll');
+    hs?.addEventListener('wheel', (e)=>{if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){hs.scrollLeft += e.deltaY; e.preventDefault();}}, {passive:false});
+  </script>
 </body>
 </html>
